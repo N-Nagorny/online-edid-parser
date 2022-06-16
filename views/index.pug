@@ -17,14 +17,13 @@ html(lang='en')
 
 	block content
 		div(class="container")
-			div(class="row")
+			div(class="row top-buffer")
 				div(class="col")
 					div.text-center
 						button(id="parseBtn", class='btn btn-primary') Parse
-			div(class="row")
+			div(class="row top-buffer")
 				div(class="col-8")
-					textarea(type="text" id="inputEdid" class="form-control" rows="20" placeholder="EDID binary" required autofocus)
+					textarea(type="text" id="inputEdid" class="form-control" rows="20" placeholder="Paste EDID binary here" required autofocus) #{inputValue}
 				div(class="col")
-					label(id="parsedEdid") Parsing result will be here
-
+					label(id="parsedEdid") #{outputValue || "Parsing result will be here"}
 

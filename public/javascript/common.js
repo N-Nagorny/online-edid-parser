@@ -10,20 +10,8 @@ $(function parseEdid() {
   $("#parseBtn").click(() => {
 
     var edid = document.getElementById("inputEdid").value;
-    $.ajax({
-      url: '//' + host + ':' + port + '/api/edid',
-      type: 'POST',
-      contentType: "application/json; charset=utf-8",
-      dataType: 'json',
-      data: JSON.stringify(edid.split(/,?\s+/)),
-      // data: JSON.stringify(body),
-      crossDomain: false,
-      success: function(data) {
-        console.log(data)
-        $("#parsedEdid").text(data.edid)
-      },
-      error: errorMessage
-    });
+    var str = edid.split(/0x|,?\s+0x+/).join("")
+    window.location.href = '/?edid=' + str
 
   });
 });
