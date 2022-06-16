@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "author": "N-Nagorny",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "async": "3.2.0",
     "body-parser": "1.19.0",
-    "edid-parser": "git://github.com/N-Nagorny/node-libedid.git#a67e8e6f57a7074a881f3f121e235ee8b5f8b104",
+    "edid-parser": "https://github.com/N-Nagorny/node-libedid.git#a67e8e6f57a7074a881f3f121e235ee8b5f8b104",
     "express": "4.16.1",
     "pug": "3.0.0"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "heroku-prebuild": "npm install",
+    "start": "node server.js"
   }
 }
