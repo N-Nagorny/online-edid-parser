@@ -10,7 +10,7 @@ $(function parseEdid() {
   $("#parseBtn").click(() => {
 
     var edid = document.getElementById("inputEdid").value;
-    var str = edid.split(/0x|,?\s+0x+/).join("")
+    var str = edid.split(/(?:0x)|(?:,?\s+)(?:0x)?/).join("")
     window.location.href = '/?edid=' + str
 
   });
